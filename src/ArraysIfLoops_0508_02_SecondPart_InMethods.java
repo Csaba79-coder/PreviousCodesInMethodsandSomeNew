@@ -38,6 +38,9 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
         doubleValueOfElements(ints);
 
 
+        // after the Exercise number 8:
+        
+
         randomNumsUploading(10, 20, nums1);
         randomNumsUploading(10, 20, nums2);
         randomNumsUploading(10, 20, nums3);
@@ -193,10 +196,10 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
 
 
     public static void findIndexOfMinOfMatrix (int[] array) {
-        int min = 0;
+        int min = array[0];
         int index = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] > min) {
+            if (min > array[i]) {
                 min = array[i];
                 index = i;
             }
