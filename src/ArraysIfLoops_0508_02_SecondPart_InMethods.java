@@ -11,6 +11,18 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
     public static int[] ints = new int[randomGenerator(min, max)];
 
 
+    public static int[] nums1 = new int[randomGenerator(10, 11)];
+    public static int[] nums2 = new int[randomGenerator(10, 11)];
+    public static int[] nums3 = new int[randomGenerator(10, 11)];
+    public static int[] nums4 = new int[randomGenerator(10, 11)];
+    public static int[] nums5 = new int[randomGenerator(10, 11)];
+    public static int[] nums6 = new int[randomGenerator(10, 11)];
+    public static int[] nums7 = new int[randomGenerator(10, 11)];
+    public static int[] nums8 = new int[randomGenerator(10, 11)];
+    public static int[] nums9 = new int[randomGenerator(10, 11)];
+    public static int[] nums10 = new int[randomGenerator(10, 11)];
+
+
     public static void main(String[] args) {
 
         System.out.println("Before loading up, with default values:");
@@ -25,6 +37,19 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
         halfValueOfElements(ints);
         doubleValueOfElements(ints);
 
+
+        randomNumsUploading(10, 20, nums1);
+        randomNumsUploading(10, 20, nums2);
+        randomNumsUploading(10, 20, nums3);
+        randomNumsUploading(10, 20, nums4);
+        randomNumsUploading(10, 20, nums5);
+        randomNumsUploading(10, 20, nums6);
+        randomNumsUploading(10, 20, nums7);
+        randomNumsUploading(10, 20, nums8);
+        randomNumsUploading(10, 20, nums9);
+        randomNumsUploading(10, 20, nums10);
+
+        creatingMatrix();
 
 
     }
@@ -119,5 +144,12 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
             }
         }
         System.out.println("There are " + counter + " elements that has double value as the average sum of array!");
+    }
+
+
+    public static int[][] creatingMatrix () {
+        int[][] matrix = {nums1, nums2};
+        System.out.println("The matrix is as follows: " + (Arrays.deepToString(matrix)));
+        return matrix;
     }
 }
