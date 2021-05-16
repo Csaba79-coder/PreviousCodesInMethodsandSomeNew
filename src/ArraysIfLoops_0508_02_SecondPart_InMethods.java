@@ -51,7 +51,7 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
 
         creatingMatrix();
 
-        printSumOfArray(sumArray());
+        printSumOfArray();
 
         findMaxValueOfArray(sumArray());
         findMinValueOfArray(sumArray());
@@ -152,10 +152,9 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
     }
 
     // I made it as an extra :)
-    public static int[][] creatingMatrix () {
+    public static void creatingMatrix () {
         int[][] matrix = {nums1, nums2, nums3, nums4, nums5, nums6, nums7, nums8, nums9, nums10};
         System.out.println("The matrix is as follows: " + (Arrays.deepToString(matrix)));
-        return matrix;
     }
 
 
@@ -169,13 +168,12 @@ public class ArraysIfLoops_0508_02_SecondPart_InMethods {
 
 
     public static int[] sumArray() {
-        int[] sumArray = {sumOfMatrix(nums1), sumOfMatrix(nums2), sumOfMatrix(nums3), sumOfMatrix(nums4), sumOfMatrix(nums5),
+        return new int[]{sumOfMatrix(nums1), sumOfMatrix(nums2), sumOfMatrix(nums3), sumOfMatrix(nums4), sumOfMatrix(nums5),
                 sumOfMatrix(nums6), sumOfMatrix(nums7), sumOfMatrix(nums8), sumOfMatrix(nums9), sumOfMatrix(nums10)};
-        return sumArray;
     }
 
 
-    public static void printSumOfArray(int[] array) {
+    public static void printSumOfArray() {
         System.out.println("The sum of the elements of arrays one-by-one: " + Arrays.toString(sumArray()));
     }
 
