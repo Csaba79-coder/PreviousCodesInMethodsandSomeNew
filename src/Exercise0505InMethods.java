@@ -11,6 +11,7 @@ public class Exercise0505InMethods {
 
         remainderWithoutModulo();
 
+        getAverageOfNums3();
 
     }
 
@@ -26,22 +27,45 @@ public class Exercise0505InMethods {
     }
 
 
-    public static int getFirstNum() {
+    public static int getFirstNumInt() {
         return getInput();
-
     }
 
 
-    public static int getSecondNum() {
+    public static double getFirstNumDouble() {
+        return getInput();
+    }
+
+
+    public static int getSecondNumInt() {
+        return getInput();
+    }
+
+
+    public static double getSecondNumDouble() {
+        return getInput();
+    }
+
+
+    public static double getThirdNumDouble() {
         return getInput();
     }
 
 
     public static void remainderWithoutModulo() {
-        int firstNum = getFirstNum();
-        int secondNum = getSecondNum();
+        int firstNum = getFirstNumInt();
+        int secondNum = getSecondNumInt();
         int modulo = firstNum - secondNum * (firstNum / secondNum);
         System.out.println("The result (using without modulo) is: " + modulo);
+    }
+
+
+    public static void getAverageOfNums3 () {
+        double firstNum = getFirstNumDouble();
+        double secondNum = getSecondNumDouble();
+        double thirdNum = getThirdNumDouble();
+        double average = ((firstNum + secondNum + thirdNum) / 3);
+        System.out.println("The average of the 3 nums are: " + average);
     }
 }
 
