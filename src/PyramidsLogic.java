@@ -1,4 +1,4 @@
-public class Pyramid {
+public class PyramidsLogic {
 
     public static int n = 5;
 

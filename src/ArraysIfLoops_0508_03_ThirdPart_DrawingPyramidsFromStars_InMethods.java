@@ -16,7 +16,6 @@ public class ArraysIfLoops_0508_03_ThirdPart_DrawingPyramidsFromStars_InMethods 
         System.out.println("------------------------");
 
         thirdPyramid();
-
     }
 
 
