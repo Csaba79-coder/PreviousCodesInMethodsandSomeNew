@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Random;
+
 
 public class Exercise0505InMethods {
 
@@ -9,43 +11,53 @@ public class Exercise0505InMethods {
 
         scanner = getScanner();
 
+        System.out.println("-----------2------------");
+
         remainderWithoutModulo();
 
-        System.out.println("------------------------");
+        System.out.println("-----------3------------");
 
         getAverageOfNums3();
 
-        System.out.println("------------------------");
+        System.out.println("-----------4------------");
 
         greetingUser();
 
-        System.out.println("------------------------");
+        System.out.println("-----------5-----------");
 
         basicArithmeticOfTwoNums();
 
-        System.out.println("------------------------");
+        System.out.println("-----------6------------");
 
-        printCharFromInput();
+        printCharConcatenateFromInput();
 
-        System.out.println("------------------------");
+        System.out.println("-----------7------------");
 
         trueOrFalse();
 
-        System.out.println("------------------------");
+        System.out.println("-----------8------------");
 
         findMaxNum();
 
-        System.out.println("------------------------");
+        System.out.println("-----------9------------");
 
         calculateSquare();
 
-        System.out.println("------------------------");
+        System.out.println("----------10------------");
 
         calculateRaiseToPower();
 
-        System.out.println("------------------------");
+        System.out.println("----------11------------");
 
         calculateSquareRoot();
+
+        System.out.println("----------12------------");
+
+        printRandomNum(randomGenerator(0, 9));
+
+        System.out.println("----------13------------");
+
+        printRandomNumIntervalByUser();
     }
 
 
@@ -94,7 +106,7 @@ public class Exercise0505InMethods {
 
 
     public static void greetingUser() {
-        System.out.println("Hello dear user: " + getUserName());
+        System.out.println("Hello dear user who's name is: " + getUserName());
     }
 
 
@@ -114,8 +126,8 @@ public class Exercise0505InMethods {
     }
 
 
-    public static void printCharFromInput() {
-        System.out.println("The char is the following: " + getCharInput());
+    public static void printCharConcatenateFromInput() {
+        System.out.println("The char concatenate is the following: " + getCharInput() + getCharInput());
     }
 
 
@@ -158,6 +170,25 @@ public class Exercise0505InMethods {
     public static void  calculateSquareRoot() {
         double num = getNumDouble();
         System.out.println("The square root of the " + num + " is: " + Math.sqrt(num));
+    }
+
+    public static int randomGenerator(int min, int max) {
+        Random random = new Random();
+        return (random.nextInt(max - min) + min);
+    }
+
+
+    public static void printRandomNum (int num) {
+        int min = 0;
+        int max = 9;
+        System.out.println("The random num between 0-9 is: "  + randomGenerator(min, max));
+    }
+
+
+    public static void printRandomNumIntervalByUser() {
+        int min = getNumInt();
+        int max = getNumInt();
+        System.out.println("The random num given by the interval of user is: " + randomGenerator(min, max));
     }
 }
 
