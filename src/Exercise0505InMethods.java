@@ -16,7 +16,7 @@ public class Exercise0505InMethods {
 
         scanner = getScanner();
 
-        System.out.println(text + " the text is from William Shakespeare, Hamlet, Act II");
+        System.out.println("\nThe text is from William Shakespeare, Hamlet, Act II: " + text + "\n");
 
         System.out.println("-----------2------------");
 
