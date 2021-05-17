@@ -4,7 +4,12 @@ import java.util.Random;
 
 public class Exercise0505InMethods {
 
+
     public static Scanner scanner;
+
+    public static String text = "There is nothing either good or bad, but thinking makes it so";
+
+    public static String otherText = "In a hole in the ground there lived a hobbit";
 
 
     public static void main(String[] args) {
@@ -69,21 +74,39 @@ public class Exercise0505InMethods {
 
         System.out.println("----------16------------");
 
+        greetingUserAgain();
+
         System.out.println("----------17------------");
+
+        wordsAreEqualOrNot();
 
         System.out.println("----------18------------");
 
+        textIsOneWordsOrNot();
+
         System.out.println("----------19------------");
+
+        getFirstAndLastCharOfText(text);
 
         System.out.println("----------20------------");
 
+        checkIndexOfACharInText();
+
         System.out.println("----------21------------");
+
+        printDateNewFormat();
 
         System.out.println("----------22------------");
 
+        printNumberOfDigits();
+
         System.out.println("----------23------------");
 
+        printFirstTenCharOfText(otherText);
+
         System.out.println("----------24------------");
+
+        printFirstWordOfText(otherText);
     }
 
 
@@ -212,8 +235,8 @@ public class Exercise0505InMethods {
     public static void printRandomNumIntervalByUser() {
         int min = getNumInt();
         int max = getNumInt();
-        // including the max! I need (max + 1)
-        System.out.println("The random num given by the interval of user is: " + randomGenerator(min, max));
+        // for including the max: I need (max + 1)
+        System.out.println("The random num given by the interval of user is: " + randomGenerator(min, (max + 1)));
     }
 
 
@@ -229,7 +252,7 @@ public class Exercise0505InMethods {
         for (int i = 0; i < text.length(); i++) {
             counter++;
         }
-        System.out.println("The string is: " + counter + " characer long!");
+        System.out.println("The string is: " + counter + " character long!");
     }
 
     public static String getStringFromDoubleFirst() {
@@ -248,5 +271,96 @@ public class Exercise0505InMethods {
         System.out.println("This is a double: " + getStringFromDoubleFirst() + ", that written as string!");
         System.out.println("This is a int: " + getGetStringFromIntSecond() + ", that written as string!");
     }
-}
 
+    public static void greetingUserAgain() {
+        System.out.println("Greeting, dear " + getUserName() + "! It is nice to see you again!");
+    }
+
+
+    public static String getWord() {
+        System.out.println("Please enter a word: ");
+        return scanner.nextLine();
+    }
+
+
+    public static void wordsAreEqualOrNot() {
+        String word1 = getWord();
+        String word2 = getWord();
+        if (word1.equals(word2)) {
+            System.out.println("The words are same!");
+        }
+        else {
+            System.out.println("The word are not the same!");
+        }
+    }
+
+
+    public static void getFirstAndLastCharOfText(String string) {
+        System.out.println("The first char of the text is: " + string.charAt(0) +
+                " and the last one is: " + string.charAt(string.length() - 1));
+    }
+
+
+    public static String getTextInput() {
+        System.out.println("Please enter a text: ");
+        return scanner.nextLine();
+    }
+
+
+    public static void textIsOneWordsOrNot() {
+        String text = getTextInput();
+        if (text.contains(" ")) {
+            System.out.println("Text is more than one words!");
+        }
+        else {
+            System.out.println("The text is only one word!");
+        }
+    }
+
+    public static void checkIndexOfACharInText() {
+        int firstIndex = text.indexOf('t');
+        int lastIndex = text.lastIndexOf('t');
+        System.out.println("Index of the letter first 't': "+ firstIndex +
+                " and index of the letter last 't': " + lastIndex);
+    }
+
+
+    public static String changeDateType() {
+        String text = "2021.05.05";
+        return text.replaceAll("\\.", "-");
+    }
+
+
+    public static void printDateNewFormat() {
+        System.out.println("The new date format is: " + changeDateType());
+    }
+
+
+    public static int countDigits() {
+       int digits = getNumInt();
+        return String.valueOf(digits).length();
+    }
+
+
+    public static void printNumberOfDigits() {
+        System.out.println("The number is " + countDigits() + " digit long!");
+    }
+
+
+    public static String findFirstTenCharOfText(String string) {
+        return string.substring(0, 10);
+    }
+
+    public static void printFirstTenCharOfText(String string) {
+        System.out.println("The first 10 char of the text: " + findFirstTenCharOfText(string));
+    }
+
+
+    public static String findFirstWordOfText(String string) {
+        return string.split(" ")[0];
+    }
+
+    public static void printFirstWordOfText(String string) {
+        System.out.println("The first word of the text is: " + findFirstWordOfText(string));
+    }
+}
