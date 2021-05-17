@@ -53,11 +53,37 @@ public class Exercise0505InMethods {
 
         System.out.println("----------12------------");
 
-        printRandomNum(randomGenerator(0, 9));
+        printRandomNum();
 
         System.out.println("----------13------------");
 
         printRandomNumIntervalByUser();
+
+        System.out.println("----------14------------");
+
+        countHowManyCharsInText(userTextInput());
+
+        System.out.println("----------15------------");
+
+        convertNumToString();
+
+        System.out.println("----------16------------");
+
+        System.out.println("----------17------------");
+
+        System.out.println("----------18------------");
+
+        System.out.println("----------19------------");
+
+        System.out.println("----------20------------");
+
+        System.out.println("----------21------------");
+
+        System.out.println("----------22------------");
+
+        System.out.println("----------23------------");
+
+        System.out.println("----------24------------");
     }
 
 
@@ -90,7 +116,7 @@ public class Exercise0505InMethods {
     }
 
 
-    public static void getAverageOfNums3 () {
+    public static void getAverageOfNums3() {
         double firstNum = getNumDouble();
         double secondNum = getNumDouble();
         double thirdNum = getNumDouble();
@@ -135,8 +161,7 @@ public class Exercise0505InMethods {
         double num = getNumDouble();
         if (num > 0) {
             System.out.println("true");
-        }
-        else {
+        } else {
             System.out.println("false");
         }
     }
@@ -147,8 +172,7 @@ public class Exercise0505InMethods {
         int num2 = getNumInt();
         if (num1 > num2) {
             System.out.println("The bigger num is: " + num1);
-        }
-        else {
+        } else {
             System.out.println("The bigger num is: " + num2);
         }
     }
@@ -156,7 +180,7 @@ public class Exercise0505InMethods {
 
     public static void calculateSquare() {
         double num = getNumDouble();
-        System.out.println("The square of the " + num + " is: " + (Math.pow (num, 2)));
+        System.out.println("The square of the " + num + " is: " + (Math.pow(num, 2)));
     }
 
 
@@ -167,7 +191,7 @@ public class Exercise0505InMethods {
     }
 
 
-    public static void  calculateSquareRoot() {
+    public static void calculateSquareRoot() {
         double num = getNumDouble();
         System.out.println("The square root of the " + num + " is: " + Math.sqrt(num));
     }
@@ -178,18 +202,51 @@ public class Exercise0505InMethods {
     }
 
 
-    public static void printRandomNum (int num) {
+    public static void printRandomNum() {
         int min = 0;
         int max = 9;
-        System.out.println("The random num between 0-9 is: "  + randomGenerator(min, max));
+        System.out.println("The random num between 0-9 is: " + randomGenerator(min, max));
     }
 
 
     public static void printRandomNumIntervalByUser() {
         int min = getNumInt();
         int max = getNumInt();
+        // including the max! I need (max + 1)
         System.out.println("The random num given by the interval of user is: " + randomGenerator(min, max));
     }
-}
 
+
+    public static String userTextInput() {
+        System.out.println("Please enter a text for counting the characters: ");
+        scanner.nextLine();
+        return scanner.nextLine();
+    }
+
+
+    public static void countHowManyCharsInText(String text) {
+        int counter = 0;
+        for (int i = 0; i < text.length(); i++) {
+            counter++;
+        }
+        System.out.println("The string is: " + counter + " characer long!");
+    }
+
+    public static String getStringFromDoubleFirst() {
+        double doubleToString = getNumDouble();
+        return String.valueOf(doubleToString);
+    }
+
+    public static String getGetStringFromIntSecond() {
+        // another way:
+        int intToString = getNumInt();
+        return Integer.toString(intToString);
+    }
+
+
+    public static void convertNumToString() {
+        System.out.println("This is a double: " + getStringFromDoubleFirst() + ", that written as string!");
+        System.out.println("This is a int: " + getGetStringFromIntSecond() + ", that written as string!");
+    }
+}
 
