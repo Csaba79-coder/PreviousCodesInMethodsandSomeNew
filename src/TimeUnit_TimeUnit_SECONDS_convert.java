@@ -6,6 +6,12 @@ public class TimeUnit_TimeUnit_SECONDS_convert {
 
     // https://mkyong.com/java/java-how-to-convert-system-nanotime-to-seconds/
 
+    // 1000000 NANOSECONDS = 1 MILLISECONDS
+
+    // website for converting: https://convertlive.com/u/convert/nanoseconds/to/milliseconds
+
+    // another converter: https://convertlive.com/u/convert/milliseconds/to/nanoseconds
+
 
     public static void main(String[] args) throws InterruptedException {
 
