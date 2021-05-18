@@ -8,6 +8,12 @@ public class PyramidsLogic {
 
         firstPyramid();
 
+        getSquare();
+
+        System.out.println("\n\n\n\n\n\n\n");
+
+        firstPyramid();
+
         secondPyramid();
 
         firstWithSpacesPyramid();
@@ -186,6 +192,15 @@ public class PyramidsLogic {
             for (int j=n-i; j>1; j--) {
                 System.out.print("");
             }
+            for (int j=0; j<=i; j++ ) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void anotherPyramid2() {
+        for (int i=0; i<n; i++) {
             for (int j=0; j<=i; j++ ) {
                 System.out.print("* ");
             }
