@@ -33,6 +33,8 @@ public class PyramidsLogic {
         thirdPyramidWithSpaces();
 
         anotherPyramid();
+
+        anotherPyramid2();
     }
 
 
