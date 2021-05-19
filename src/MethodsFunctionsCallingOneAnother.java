@@ -34,6 +34,17 @@ public class MethodsFunctionsCallingOneAnother {
         // this one does not prints the text!!!
         greetingGyongyi2(text);
         greetingCsaba2();
+
+        System.out.println("------4------");
+        // calling same methods, but have only print line in 1 method :)
+        // greetingGyongyi3(); // it has no print, so its an exception! error!! if you call separate
+        greetingGyongyi3(greetingCsaba3());
+
+        System.out.println("------5------");
+        // last step how it looks nice! one give return statement! the other prints it out :)
+        // the print function call the string (the text) the one which was the output of the 2 methods :)
+        printGreeting(greetingGyongyi4());
+        printGreeting(greetingCsaba4());
     }
 
     public static void greetingGyongyi1() {
@@ -67,5 +78,43 @@ public class MethodsFunctionsCallingOneAnother {
         String textCsaba = "Hello Csaba 2";
         System.out.println(textCsaba);
         return textCsaba;
+    }
+
+
+    public static String greetingGyongyi3(String string) {
+        String textCsaba = "Hello Csaba 3";
+        String textGyonygi = "Hello Gyöngyi 3";
+        System.out.println(textCsaba);
+        System.out.println(textGyonygi);
+        return textGyonygi;
+    }
+
+
+    // this one give back a text that is a string! and also prints!
+    // so this one give back a string text, and also prints!
+
+    public static String greetingCsaba3() {
+        String textCsaba = "Hello Csaba 3";
+        return textCsaba;
+    }
+
+
+    // these are giving back String in return statement!!!
+    public static String greetingGyongyi4() {
+        String textGyongyi = "Hello Gyöngyi 4";
+        return textGyongyi;
+    }
+
+
+    public static String greetingCsaba4 () {
+        String textCsaba = "Hello Csaba 4";
+        return textCsaba;
+    }
+
+
+    // this one has no return, prints only!!! (prints the other two method) one-by-one!
+    // intput is String string - so a string goes into, and prints the one, which goes into :)
+    public static void printGreeting(String string) {
+        System.out.println(string);
     }
 }
