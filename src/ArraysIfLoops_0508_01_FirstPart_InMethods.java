@@ -7,7 +7,7 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
     public static int[] ints = {27, 969, -56, 1222, 8647000, -333, 7541, 89, 6502, -53042, 123, 876};
     public static double[] doubles = {3.14, -765.99, 52.4986, -10.3333337, 834.0965};
     public static String[] strings = {"alma", "málna", "barack", "szilva"};
-    public static double[][] numsMatrixDouble = {castArrayToDouble(bytes), castArraytoDouble(ints), doubles};
+    public static double[][] numsMatrixDouble = {castArrayToDouble(bytes), castArrayToDouble(ints), doubles};
 
 
     public static void main(String[] args) {
@@ -24,15 +24,15 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
 
         printResultInString(new String[]{Integer.toString(sumOfArrays(bytes)), sumOfArray(chars),
                 Integer.toString(sumOfArray(ints)), Double.toString(sumOfArray(doubles)),
-                sumOfArray(strings)}); // or using if I don't know the tpye: String.valueOf(sumOfArray(bytes))
+                sumOfArray(strings)}); // or using if I don't know the type: String.valueOf(sumOfArray(bytes))
 
-        printFirstandLastItemofArray(new String[]{findFirstandLastItemofArray(bytes), findFirstandLastItemofArray(chars),
-                findFirstandLastItemofArray(ints), findFirstandLastItemofArray(doubles), findFirstandLastItemofArray(strings)});
+        printFirstAndLastItemOfArray(new String[]{findFirstAndLastItemOfArray(bytes), findFirstAndLastItemOfArray(chars),
+                findFirstAndLastItemOfArray(ints), findFirstAndLastItemOfArray(doubles), findFirstAndLastItemOfArray(strings)});
 
 //        castArrayToDouble(bytes);
-//        castArraytoDouble(ints);
+//        castArrayToDouble(ints);
 
-        printPosandNegNumsofArray(new double[][]{castArrayToDouble(bytes), castArraytoDouble(ints), doubles});
+        printPosAndNegNumsOfArray(new double[][]{castArrayToDouble(bytes), castArrayToDouble(ints), doubles});
 
         printIsNotLetter(chars);
 
@@ -40,7 +40,7 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
 
         System.out.println(Arrays.deepToString(numsMatrixDouble));
 
-        sumAndAvarageOfNumsMatrix(numsMatrixDouble);
+        sumAndAverageOfNumsMatrix(numsMatrixDouble);
 
         maxLengthString(strings);
 
@@ -146,37 +146,37 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
     }
 
 
-    public static String findFirstandLastItemofArray(byte[] array) {
+    public static String findFirstAndLastItemOfArray(byte[] array) {
         return "The first item of the array (byte) is: " + array[0] + " and the last item of the array is: "
                 + (array[array.length - 1]) + ".";
     }
 
 
-    public static String findFirstandLastItemofArray(char[] array) {
+    public static String findFirstAndLastItemOfArray(char[] array) {
         return "The first item of the array (char) is: " + array[0] + " and the last item of the array is: "
                 + (array[array.length - 1]) + ".";
     }
 
 
-    public static String findFirstandLastItemofArray(int[] array) {
+    public static String findFirstAndLastItemOfArray(int[] array) {
         return "The first item of the array (int) is: " + array[0] + " and the last item of the array is: "
                 + (array[array.length - 1]) + ".";
     }
 
 
-    public static String findFirstandLastItemofArray(double[] array) {
+    public static String findFirstAndLastItemOfArray(double[] array) {
         return "The first item of the array (double) is: " + array[0] + " and the last item of the array is: "
                 + (array[array.length - 1]) + ".";
     }
 
 
-    public static String findFirstandLastItemofArray(String[] array) {
+    public static String findFirstAndLastItemOfArray(String[] array) {
         return "The first item of the array (string) is: " + array[0] + " and the last item of the array is: "
                 + (array[array.length - 1]) + ".";
     }
 
 
-    public static void printFirstandLastItemofArray(String[] array) {
+    public static void printFirstAndLastItemOfArray(String[] array) {
         for (String s : array) {
             System.out.println(s);
         }
@@ -193,7 +193,7 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
     }
 
 
-    public static double[] castArraytoDouble(int[] array) {
+    public static double[] castArrayToDouble(int[] array) {
         double[] intToDoubleArr = new double[array.length];
         for (int i = 0; i < array.length; i++) {
             intToDoubleArr[i] = array[i];
@@ -202,7 +202,7 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
         return intToDoubleArr;
     }
 
-    public static void printPosandNegNumsofArray(double[][] matrix) {
+    public static void printPosAndNegNumsOfArray(double[][] matrix) {
         for (double[] value : matrix) {
             int pos = 0;
             int neg = 0;
@@ -222,8 +222,8 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
     }
 
 
-//        // Sum the all pos and neg and zeros in all Array alltogehter
-//        public static void printAllPosandNegNumsofAllArray (double [][] matrix){
+//        // Sum the all pos and neg and zeros in all Array altogether
+//        public static void printAllPosAndNegNumsUfAllArray (double [][] matrix){
 //            int pos = 0;
 //            int neg = 0;
 //            int zero = 0;
@@ -274,7 +274,7 @@ public class ArraysIfLoops_0508_01_FirstPart_InMethods {
     }
 
 
-    public static void sumAndAvarageOfNumsMatrix (double[][] array) {
+    public static void sumAndAverageOfNumsMatrix(double[][] array) {
         double  sumMatrix = 0;
         double counterMatrix = 0;
         for (double[] arr : array) {

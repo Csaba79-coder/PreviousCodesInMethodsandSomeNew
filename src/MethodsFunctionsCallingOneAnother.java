@@ -45,11 +45,15 @@ public class MethodsFunctionsCallingOneAnother {
         // the print function call the string (the text) the one which was the output of the 2 methods :)
         printGreeting(greetingGyongyi4());
         printGreeting(greetingCsaba4());
+
+        System.out.println("------5------");
+        System.out.println(greetingGyongyi5());
+        System.out.println(greetingCsaba5());
     }
+
 
     public static void greetingGyongyi1() {
         System.out.println("Hello Gyöngyi 1");
-
     }
 
 
@@ -106,7 +110,7 @@ public class MethodsFunctionsCallingOneAnother {
     }
 
 
-    public static String greetingCsaba4 () {
+    public static String greetingCsaba4() {
         String textCsaba = "Hello Csaba 4";
         return textCsaba;
     }
@@ -116,5 +120,16 @@ public class MethodsFunctionsCallingOneAnother {
     // intput is String string - so a string goes into, and prints the one, which goes into :)
     public static void printGreeting(String string) {
         System.out.println(string);
+    }
+
+    public static String greetingGyongyi5() {
+        String textGyongyi = "Hello Gyöngyi 5";
+        return textGyongyi;
+    }
+
+
+    public static String greetingCsaba5() {
+        String textCsaba = "Hello Csaba 5";
+        return textCsaba;
     }
 }
