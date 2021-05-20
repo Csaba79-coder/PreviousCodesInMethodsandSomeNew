@@ -1,23 +1,20 @@
 import java.util.Scanner;
 
 
-public class dynamicChessBoardAndOtherBoardWithMethods {
-
+public class ChessBoardInMethod {
 
     public static int width;
     public static int length;
     public static String userName = getUserName();
-    public static boolean[][] chessBoard;
-
+    public static int[][] chessBoard;
 
     public static void main(String[] args) {
 
 
         isValidChessboard();
-        getBoard(width, length);
-        printBoard();
-    }
+        printBoard(getChessBoard(width, length));
 
+    }
 
     public static Scanner getScanner() {
         return new Scanner(System.in);
@@ -66,28 +63,23 @@ public class dynamicChessBoardAndOtherBoardWithMethods {
     }
 
 
-    public static void getBoard(int length, int width) {
-        chessBoard = new boolean[length][width];
-        for (int i = 0; i < chessBoard.length; i++) {
-            for (int j = 0; j < chessBoard[i].length; j++) {
-                chessBoard[i][j] = (i + j) % 2 == 0;
-            }
-        }
+    public static int[][] getChessBoard(int width, int length) {
+        chessBoard = new int[width][length];
+        return chessBoard;
     }
 
+    public static void printBoard(int[][] array) {
 
-    public static void printBoard() {
-
-        System.out.print(" ");
-        for (char i = 'A'; i < 'A' + chessBoard[0].length ; i++) {
+        System.out.print("\n ");
+        for (char i = 'A'; i < 'A' + array[0].length ; i++) {
             System.out.print(" " + i);
         }
         System.out.println();
 
-        for (int i = chessBoard.length-1; i >= 0; i--) {
-            System.out.print((i+1) + " ");
-            for (int j = 0; j < chessBoard[i].length; j++) {
-                if (chessBoard[i][j]) {
+        for (int i = array.length-1; i >= 0; i--) {
+            System.out.print((i + 1) + " ");
+            for (int j = 0; j < array[i].length; j++) {
+                if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0) {
                     System.out.print("B ");
                 } else {
                     System.out.print("W ");
@@ -97,20 +89,27 @@ public class dynamicChessBoardAndOtherBoardWithMethods {
         }
         System.out.println();
     }
+
+
+    /*public static void printBoard2(int[][] array) {
+
+        System.out.print("\n ");
+        for (char i = 'A'; i < 'A' + array[0].length ; i++) {
+            System.out.print(" " + i);
+        }
+        System.out.println();
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print((i + 1) + " ");
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] % 2 == 0 && array[i][j] % 2 != 0 && i % 2 == 0 || j % 2 == 0) {
+                    System.out.print("B ");
+                } else if (array[i][j] % 2 != 0 && array[i][j] % 2 != 0 && i % 2 != 0 || j % 2 != 0) {
+                    System.out.print("W ");
+                }
+            }
+            System.out.println("\b");
+        }
+        System.out.println();
+    }*/
 }
-
-
-
-// another type just for practice switch!!! but it was not in loop!!! - just for me :)
-
-//    public static void getSystemWelcomeMessage(String result) {
-//        switch (result) {
-//            case "true":
-//                System.out.println("\nIt is a chessboard, let's play together!\n");
-//                break;
-//            case "false":
-//                System.out.println("Please enter a valid input for chessboard, that is 8 long and 8 wide!");
-//        }
-//    }
-
-
