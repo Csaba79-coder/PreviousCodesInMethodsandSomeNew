@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class vowelOrConsonantInMethods {
+public class VowelOrConsonantInMethods {
 
 
     public static int tries = 3;
