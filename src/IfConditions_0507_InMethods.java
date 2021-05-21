@@ -20,6 +20,9 @@ public class IfConditions_0507_InMethods {
     public static int averageWomanHeight = 164;
     public static int averageManHeight = 176;
 
+    public static String genderInput;
+    public static int height;
+
 
     public static void main(String[] args) {
 
@@ -38,7 +41,10 @@ public class IfConditions_0507_InMethods {
 
         System.out.println("\n-------------4-----------\n");
 
-        genderHeightChecker();
+
+        genderInput = getGenderInput();
+        height = getHeightInput();
+        genderHeightChecker(genderInput,height);
 
         System.out.println("\n-------------5-----------\n");
 
@@ -108,12 +114,10 @@ public class IfConditions_0507_InMethods {
             String genderInput = getStringInput().toUpperCase(Locale.ROOT);
             if (genderInput.equals(womanGender) || genderInput.equals(manGender)) {
                 isValidInput = true;
-            } else {
-                System.out.println("Invalid input, please try again, maximum tries " + --limitGender + "!");
-            }
+            } else System.out.println("Invalid input, please try again, maximum tries " + --limitGender + "!");
+            return genderInput;
         }
         while (!isValidInput && (--triesGender > 0));
-        return null;
     }
 
 
@@ -122,29 +126,39 @@ public class IfConditions_0507_InMethods {
             System.out.println("Please enter your height (required data in cm) :");
             int height = getIntInput();
             if (50 < height && height < 250) {
-                isValidInput = false;
+                isValidInput = true;
             } else System.out.println("Invalid input, please try again, maximum tries " + --limitHeight + "!");
+            return height;
         }
         while (isValidInput && (--triesHeight > 0));
-        return 0;
     }
 
 
-    public static void genderHeightChecker() {
-        String string = getGenderInput();
-        int num = getHeightInput();
+    public static void genderHeightChecker(String string, int num) {
         if (string.equals("FFI") && num > averageManHeight) {
             System.out.println("Az Ön magassága az átlagnál magasabb!");
+            System.out.println("The difference between the average and your height is: "
+                    + Math.abs((num - averageManHeight)));
         } else if (string.equals("FFI") && num < averageManHeight) {
             System.out.println("Az Ön magassága az átlagnál alacsonyabb!");
+            System.out.println("The difference between the average and your height is: "
+                    + Math.abs((num - averageManHeight)));
         } else if (string.equals("FFI") && num == averageManHeight) {
             System.out.println("Az Ön magassága éppen átlagos!");
+            System.out.println("The difference between the average and your height is: "
+                    + Math.abs((num - averageManHeight)));
         } else if (string.equals("NO") && num > averageWomanHeight) {
             System.out.println("Az Ön magassága az átlagnál magasabb!");
+            System.out.println("The difference between the average and your height is: "
+                    + Math.abs((num - averageWomanHeight)));
         } else if (string.equals("NO") && num < averageWomanHeight) {
             System.out.println("Az Ön magassága az átlagnál alacsonyabb!");
+            System.out.println("The difference between the average and your height is: "
+                    + Math.abs((num - averageWomanHeight)));
         } else if (string.equals("NO") && num == averageWomanHeight) {
             System.out.println("Az Ön magassága éppen átlagos!");
+            System.out.println("The difference between the average and your height is: "
+                    + Math.abs((num - averageWomanHeight)));
         } else {
             System.out.println("Invalid input!");
         }
