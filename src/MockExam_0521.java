@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 
-public class mockExam_0521 {
+public class MockExam_0521 {
 
 
     public static boolean division = false;
@@ -164,13 +164,11 @@ public class mockExam_0521 {
         int status = 1;
         int num = 2;
 
-        if (n >= 1) {
-            System.out.println("First " + n + " prime numbers are:");
-        }
+        if (n >= 1) System.out.println("First " + n + " prime numbers are:");
 
-        for ( int i = 2 ; i <= n ;  )
+        for ( int i = 0 ; i < n ; )
         {
-            for ( int j = 2 ; j <= Math.sqrt(num) ; j++ )
+            for (int j = 2 ; j <= Math.sqrt(num) ; j++)
             {
                 if ( num % j == 0 )
                 {
@@ -199,7 +197,6 @@ public class mockExam_0521 {
 
         if (n >= 1) {
             System.out.println("First " + n + " prime numbers are:");
-            System.out.println(2);
         }
 
         for ( int i = 2 ; i <= n ;  )

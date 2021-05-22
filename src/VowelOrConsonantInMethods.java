@@ -6,7 +6,8 @@ public class VowelOrConsonantInMethods {
 
     public static int tries = 3;
     public static int limit = 3;
-    public static boolean isValidInput = false;
+    // public static boolean isValidInput = false; // default value is false
+    public static boolean isValidInput;
     public static char ch;
 
 
@@ -43,7 +44,7 @@ public class VowelOrConsonantInMethods {
 
 
     public static void checkCharInput(boolean bool) {
-        if (bool == true) {
+        if (bool) {
             char chSwitchLower = Character.toLowerCase(ch);
             switch (chSwitchLower) {
                 case 'a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ö', 'ő', 'ú', 'ü', 'ű', 'ä' -> System.out.println(ch + " is vowel");
