@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+
 public class MockExamWithAdvicesSendingForReview {
 
 
@@ -9,6 +10,7 @@ public class MockExamWithAdvicesSendingForReview {
         // for checking prints:
         System.out.println(checkDivision(7));
         System.out.println(checkDivision(10, 5));
+        System.out.println(checkDivision(10, 3));
         System.out.println(countIntDivisors(16));
         System.out.println(divisorWithMaxLimit(16, 3));
         System.out.println(counterIntDivisorPairs(16));
@@ -16,14 +18,20 @@ public class MockExamWithAdvicesSendingForReview {
         System.out.println(differenceOfDigits(123, sumDigits(123)));
         System.out.println(isPalindrome("ANNA"));
         System.out.println(isPalindrome("CSABA"));
-        System.out.println(Arrays.toString(getPrimeFisrtTen()));
+        System.out.println(Arrays.toString(getPrimeFirstTen()));
         System.out.println(Arrays.toString(getPrime(26)));
-        String[] strings = {"apple", "melon"};
 
+        String[] strings = {"apple", "melon"};
         System.out.println(Arrays.toString(indexOfItems(strings, "a")));
         System.out.println(Arrays.toString(indexOfItems(strings, "e")));
         System.out.println(Arrays.toString(indexOfItems(strings, "o")));
         System.out.println(Arrays.toString(indexOfItems(strings, "x")));
+
+//        String[] strings2 = {"apple", "watermelon"};
+//        System.out.println(Arrays.toString(indexOfItemsDoubleChar(strings2, "e")));
+//        System.out.println(Arrays.toString(indexOfItemsDoubleChar(strings2, "o")));
+//        System.out.println(Arrays.toString(indexOfItemsDoubleChar(strings2, "x")));
+
         int[] nums = {1, 2, 1, 3, 4, 5, 6, 1, 1, 1, 1};
         int[] nums2 = {1, 2, 3, 4, 5, 6};
         System.out.println(howManyTimesElement(nums, 1));
@@ -60,7 +68,7 @@ public class MockExamWithAdvicesSendingForReview {
 
     public static int divisorWithMaxLimit(int number, int limit) {
         return Math.min(number, limit);
-        // before refactor: 
+        // before refactor:
 //        if (number < limit) {
 //            return number;
 //        } else if (number > limit) {
@@ -106,7 +114,7 @@ public class MockExamWithAdvicesSendingForReview {
     }
 
 
-    public static int[] getPrimeFisrtTen() {
+    public static int[] getPrimeFirstTen() {
         int n = 10;
         int status = 1;
         int num = 2;
@@ -172,6 +180,9 @@ public class MockExamWithAdvicesSendingForReview {
 
         return result;
     }
+
+//
+    
 
 
     public static int howManyTimesElement(int[] array, int number) {
