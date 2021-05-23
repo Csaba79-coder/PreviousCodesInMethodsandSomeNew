@@ -27,10 +27,6 @@ public class MockExamWithAdvicesSendingForReview {
         System.out.println(Arrays.toString(indexOfItems(strings, "o")));
         System.out.println(Arrays.toString(indexOfItems(strings, "x")));
 
-//        String[] strings2 = {"apple", "watermelon"};
-//        System.out.println(Arrays.toString(indexOfItemsDoubleChar(strings2, "e")));
-//        System.out.println(Arrays.toString(indexOfItemsDoubleChar(strings2, "o")));
-//        System.out.println(Arrays.toString(indexOfItemsDoubleChar(strings2, "x")));
 
         int[] nums = {1, 2, 1, 3, 4, 5, 6, 1, 1, 1, 1};
         int[] nums2 = {1, 2, 3, 4, 5, 6};
@@ -38,6 +34,20 @@ public class MockExamWithAdvicesSendingForReview {
         System.out.println(howManyTimesElement(nums2, 1));
         System.out.println(howManyTimesElement(nums2, 7));
 
+        System.out.println("--------------------------------------");
+        int[] numsDuplication1 = {};
+        int[] numsDuplication2 = {1, 1};
+        int[] numsDuplication3 = {1, 2};
+        int[] numbers = {0, 1, 1, 2, 3 ,4, 5};
+        int[] numbers1 = {0, 1, 2, 3 ,4, 5};
+        System.out.println(countDifferentValues(numsDuplication1));
+        System.out.println(countDifferentValues(numsDuplication2));
+        System.out.println(countDifferentValues(numsDuplication3));
+        System.out.println(countDifferentValues(numbers));
+        System.out.println(countDifferentValues(numbers1));
+
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println(sumOfMatrixRow(matrix));
     }
 
 
@@ -182,7 +192,6 @@ public class MockExamWithAdvicesSendingForReview {
     }
 
 //
-    
 
 
     public static int howManyTimesElement(int[] array, int number) {
@@ -194,5 +203,48 @@ public class MockExamWithAdvicesSendingForReview {
         }
         return counter;
     }
-}
 
+
+    public static int countDifferentValues(int[] array) {
+        int counter = 0;
+        if (array.length == 2 && array[0] == array[1])
+            return 0;
+        for (int i = 0; i < (array.length - 1); i++) {
+            if (array[i] == array[(i + 1)]) {
+                counter++;
+            }
+        }
+        return (array.length - counter);
+    }
+
+
+    public static int sumOfMatrixRow(int[][] matrix) {
+        int difference;
+        int rows, cols, sumRow;
+        rows = matrix.length;
+        cols = matrix[0].length;
+        int[] array = new int[matrix.length];
+
+        for (int i = 0; i < rows; i++) {
+            sumRow = 0;
+            for (int j = 0; j < cols; j++) {
+                sumRow += matrix[i][j];
+                array[i] = sumRow;
+            }
+        }
+        int maxValue = array[0];
+        for (int k : array) {
+            if (maxValue > k) {
+                maxValue = k;
+            }
+        }
+        int minvalue = array[0];
+        for (int i : array) {
+            if (minvalue < i) {
+                minvalue = i;
+            }
+        }
+        difference = (maxValue - minvalue);
+        return Math.abs(difference);
+    }
+}
