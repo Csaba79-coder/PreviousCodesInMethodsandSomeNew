@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+
 public class ProgrammingTheorems {
 
 
@@ -28,12 +29,30 @@ public class ProgrammingTheorems {
         System.out.println(max(array4));
         System.out.println(min(array4));
 
-        int[] bubble = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
-        System.out.println(Arrays.toString(bubbleSortGrowing(bubble)));
-        System.out.println(Arrays.toString(bubbleSortGrowing2(bubble)));
-        System.out.println(Arrays.toString(bubbleSortReducing(bubble)));
-        System.out.println(Arrays.toString(bubbleSortReducing2(bubble)));
+        System.out.println("Sorting with finding max value:");
+        int[] sortingMax1 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(sortingWithChoosingMaxIncreasingValues(sortingMax1)));
+        System.out.println("Sorting with finding min value:");
+        int[] sortingMin1 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(sortingWithChoosingMinIncreasingValues(sortingMin1)));
+        System.out.println("Bubble sort increasing and decreasing:");
+        int[] bubble1 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(bubbleSortGrowing(bubble1)));
+        int[] bubble2 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(bubbleSortGrowing2(bubble2)));
+        int[] bubble5 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(bubbleSortIncreasing1(bubble5)));
+        int[] bubble3 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(bubbleSortReducing(bubble3)));
+        int[] bubble4 = {1, 10, 100, 9, 7, 52, 99, 78, 34, 77};
+        System.out.println(Arrays.toString(bubbleSortReducing2(bubble4)));
+        System.out.println("Binary search (using any of the sorted arrays!!!)");
+        System.out.println("The index of the number is: ");
+        int[] binary = {1, 7, 9, 10, 34, 52, 77, 78, 99, 100};
+        System.out.println(binarySearch(binary, 9));
+        System.out.println(binarySearch(binary, 78));
     }
+
 
     public static int sum(int[] array) {
         int sum = 0;
@@ -225,6 +244,44 @@ public class ProgrammingTheorems {
     }
 
 
+    public static int[] sortingWithChoosingMaxIncreasingValues(int[] array) {
+
+        int[] sortedWithMaxValue = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                int tmp;
+                if (array[i] > array[j]) {
+                    tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+        System.arraycopy(array, 0, sortedWithMaxValue, 0, array.length);
+            return sortedWithMaxValue;
+    }
+
+
+    public static int[] sortingWithChoosingMinIncreasingValues(int[] array) {
+
+        int[] sortedWithMinValue = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                int tmp;
+                if (array[i] < array[j]) {
+                    tmp = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp;
+                }
+            }
+        }
+        System.arraycopy(array, 0, sortedWithMinValue, 0, array.length);
+        return sortedWithMinValue;
+    }
+
+
     public static int[] bubbleSortGrowing(int[] array) {
         int temp;
         int[] bubbleSorted = new int[array.length];
@@ -248,11 +305,28 @@ public class ProgrammingTheorems {
         int temp;
         int[] bubbleSorted = new int[array.length];
         for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < (array.length - 1); j++) {
+            for (int j = 1; j < array.length; j++) {
                 if (array[j - 1] > array[j]) {
                     temp = array[j - 1];
                     array[j - 1] = array[j];
                     array[j] = temp;
+                }
+            }
+            System.arraycopy(array, 0, bubbleSorted, 0, array.length);
+        }
+        return bubbleSorted;
+    }
+
+
+    public static int[] bubbleSortIncreasing1(int[] array) {
+        int temp;
+        int[] bubbleSorted = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < (array.length - 1); j++) {
+                if (array[j] > array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
             System.arraycopy(array, 0, bubbleSorted, 0, array.length);
@@ -292,5 +366,28 @@ public class ProgrammingTheorems {
             System.arraycopy(array, 0, bubbleSorted, 0, array.length);
         }
         return bubbleSorted;
+    }
+
+
+    public static int binarySearch(int[] array, int number) {
+        int left = 0;
+        int right = array.length-1;
+        int mid;
+        int result = -1;
+
+        if (number >= array[0] && number <= array[array.length-1])
+            for (int i = 0; i < array.length; i++) {
+                if (left <= right) {
+                    mid = left + (right - left) / 2;
+                    if (number < array[mid]) {
+                        right = mid - 1;
+                    } else if (number > array[mid]) {
+                        left = mid + 1;
+                    } else {
+                        result = mid;
+                    }
+                }
+            }
+        return result;
     }
 }
