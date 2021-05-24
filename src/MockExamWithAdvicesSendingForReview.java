@@ -47,7 +47,27 @@ public class MockExamWithAdvicesSendingForReview {
         System.out.println(countDifferentValues(numbers1));
 
         int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] matrix2 = {{100}, {500}, {1000}};
         System.out.println(sumOfMatrixRow(matrix));
+        System.out.println(sumOfMatrixRow(matrix2));
+
+        System.out.println("Solution by mentor:");
+        // calling for checking solution got from mentor:
+        System.out.println(countDifferentNumsInArr(numsDuplication1));
+        System.out.println(countDifferentNumsInArr(numsDuplication2));
+        System.out.println(countDifferentNumsInArr(numsDuplication3));
+        System.out.println(countDifferentNumsInArr(numbers));
+        System.out.println(countDifferentNumsInArr(numbers1));
+        System.out.println(Arrays.toString(findTwoRowsWithBiggestDifference(matrix)));
+        System.out.println(Arrays.toString(findTwoRowsWithBiggestDifference(matrix2)));
+
+        System.out.println("Result with array given by the mentor:");
+        int[] arrayByMentor1 = {1, 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1};
+        int[] arrayByMentor2 = {1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4};
+        System.out.println(countDifferentValues(arrayByMentor1));
+        System.out.println(countDifferentNumsInArr(arrayByMentor1));
+        System.out.println(countDifferentValues(arrayByMentor2));
+        System.out.println(countDifferentNumsInArr(arrayByMentor2));
     }
 
 
@@ -205,10 +225,13 @@ public class MockExamWithAdvicesSendingForReview {
     }
 
 
+    // gives wrong result in some tests!
     public static int countDifferentValues(int[] array) {
         int counter = 0;
-        if (array.length == 2 && array[0] == array[1])
+        if (array.length < 1)
             return 0;
+        else if (array.length == 2 && array[0] == array[1])
+            return 1;
         for (int i = 0; i < (array.length - 1); i++) {
             if (array[i] == array[(i + 1)]) {
                 counter++;
@@ -218,6 +241,7 @@ public class MockExamWithAdvicesSendingForReview {
     }
 
 
+    // misunderstanding the task! but stays this WAY! I counted the different and not giving back the indexes of the rows!
     public static int sumOfMatrixRow(int[][] matrix) {
         int difference;
         int rows, cols, sumRow;
@@ -246,5 +270,62 @@ public class MockExamWithAdvicesSendingForReview {
         }
         difference = (maxValue - minvalue);
         return Math.abs(difference);
+    }
+
+
+    // soulution of my mentor (I had misunderstood the exercise that must give back index of the rows ...)
+    public static int[] findTwoRowsWithBiggestDifference(int[][] matrix) {
+        int[] sums = new int[matrix.length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            sums[i] = sum(matrix[i]);
+        }
+
+        return findBiggestDifference(sums);
+    }
+
+    public static int sum(int[] arr) {
+        int sum = 0;
+
+        for (int i : arr) {
+            sum += i;
+        }
+
+        return sum;
+    }
+
+
+    public static int[] findBiggestDifference(int[] arr) {
+        int min = arr[0], max = arr[0];
+        int posMin = 0, posMax = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+                posMin = i;
+            }
+            if (arr[i] > max) {
+                max = arr[i];
+                posMax = i;
+            }
+        }
+
+        return new int[]{posMin, posMax};
+    }
+
+
+    public static int countDifferentNumsInArr(int[] arr) {
+        StringBuilder b = new StringBuilder();
+        int counter = 0;
+
+        for (int i : arr) {
+            String numToString = "|" + i + "|";
+            if (!b.toString().contains(numToString)) {
+                b.append(numToString);
+                counter++;
+            }
+        }
+
+        return counter;
     }
 }
