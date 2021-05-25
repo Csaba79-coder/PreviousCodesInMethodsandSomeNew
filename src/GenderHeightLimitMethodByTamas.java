@@ -74,7 +74,7 @@ public class GenderHeightLimitMethodByTamas {
         }
     }
 
-    
+
     public static int getUserHeight() {
         System.out.println("Please add your height in centimeter");
         int height = scanner.nextInt();
