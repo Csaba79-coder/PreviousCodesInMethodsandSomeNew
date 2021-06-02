@@ -16,6 +16,18 @@ public class GandalfAndBilboInArrayMethods {
         int[] numsWeight = {84, 83, 82, 76, 61, 70, 58, 67, 72, 85};
         System.out.println("The dwarfs and Gandalf needs " + intPairs(numsWeight) + " min to go across the bridge!");
 
+//        int[][] weightsHeights = {{84, 144}, {83, 130}, {82, 138}, {76, 135}, {61, 128}, {70, 130}, {58, 120},
+//                {67, 125}, {72, 130}, {85, 110}};
+//        reachFourMeterOrNot(weightsHeights);
+
+        int troll = 270;
+        int[] dwarfsHeights = {130, 138, 135, 128, 130, 120, 125, 130, 110};
+
+        System.out.println("The troll is higher than two of the dwarfs together: "
+                + compareTrollHeightWithDwarfs(dwarfsHeights, troll));
+
+        String fuckingStupidBullshitString = "obbnagy intm incharm sé ím!pr enjM eb a ebblegkis ámúsz tónaj nekmely ámasz";
+
     }
 
 
@@ -89,4 +101,53 @@ public class GandalfAndBilboInArrayMethods {
         }
         return (((array.length - (2 * whatTheFuck)) + whatTheFuck) * 5);
     }
+
+//    public static boolean reachFourMeterOrNot(int[][] matrix) {
+//        boolean result = false;
+//        int min = matrix[0][0];
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                if (matrix[i][j] < matrix[0][0]) {
+//                    matrix[i][j] = min;
+//                }
+//            }
+//        }
+//
+//        int[][] newMatrix = new int[matrix.length][];
+//        int k = 0;
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                if (matrix[0][0] > matrix[i][j]) {
+//                    matrix[i][k] = matrix[i][j];
+//                    k++;
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.deepToString(newMatrix));
+//        return result;
+//    }
+
+
+    public static boolean compareTrollHeightWithDwarfs(int[] array, int number) {
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                array[i] = max;
+            }
+        }
+        int difference = (number - max);
+        for (int j : array) {
+            if (difference <= j) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+//    public static String[] fromBullshitBiggerOne(String text) {
+//        for (int i = 0; i < text.length(); i++) {
+//            if ()
+//        }
+//    }
 }
