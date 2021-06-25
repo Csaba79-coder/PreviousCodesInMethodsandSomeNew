@@ -18,7 +18,7 @@
 #     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (os_windows.cpp:3466), pid=10732, tid=7712
+#  Out of Memory Error (os_windows.cpp:3466), pid=1120, tid=10956
 #
 # JRE version:  (16.0.1+9) (build )
 # Java VM: Java HotSpot(TM) 64-Bit Server VM (16.0.1+9-24, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
@@ -27,16 +27,16 @@
 
 ---------------  S U M M A R Y ------------
 
-Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\lib\idea_rt.jar=57101:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\bin -Dfile.encoding=UTF-8 com.company.Main
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\lib\idea_rt.jar=58622:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\bin -Dfile.encoding=UTF-8 ModuleTest1
 
 Host: Intel(R) Core(TM) i5-4590S CPU @ 3.00GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.546)
-Time: Fri May 14 19:43:28 2021 Közép-európai nyári iduild 19041 (10.0.19041.546) elapsed time: 0.254762 seconds (0d 0h 0m 0s)
+Time: Sat May 29 11:15:33 2021 Közép-európai nyári iduild 19041 (10.0.19041.546) elapsed time: 0.018808 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x0000017550139720):  JavaThread "Unknown thread" [_thread_in_vm, id=7712, stack(0x0000006bfda00000,0x0000006bfdb00000)]
+Current thread (0x000001af13189340):  JavaThread "Unknown thread" [_thread_in_vm, id=10956, stack(0x0000002dc1000000,0x0000002dc1100000)]
 
-Stack: [0x0000006bfda00000,0x0000006bfdb00000]
+Stack: [0x0000002dc1000000,0x0000002dc1100000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x6687ca]
 V  [jvm.dll+0x7ca3c9]
@@ -65,22 +65,22 @@ C  [ntdll.dll+0x4cec1]
 ---------------  P R O C E S S  ---------------
 
 Threads class SMR info:
-_java_thread_list=0x00007ffad20ccbb8, length=0, elements={
+_java_thread_list=0x00007ffd7b06cbb8, length=0, elements={
 }
 
 Java Threads: ( => current thread )
 
 Other Threads:
-  0x000001755017a750 GCTaskThread "GC Thread#0" [stack: 0x0000006bfdb00000,0x0000006bfdc00000] [id=12696]
-  0x000001755018b450 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000006bfdc00000,0x0000006bfdd00000] [id=7848]
-  0x000001755018bec0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000006bfdd00000,0x0000006bfde00000] [id=14964]
+  0x000001af131c82d0 GCTaskThread "GC Thread#0" [stack: 0x0000002dc1100000,0x0000002dc1200000] [id=9220]
+  0x000001af131d8fd0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002dc1200000,0x0000002dc1300000] [id=7952]
+  0x000001af131daa50 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002dc1300000,0x0000002dc1400000] [id=11820]
 
-[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffad18a44d7]
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd7a8444d7]
 
 VM state: not at safepoint (not fully initialized)
 
 VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
-[0x0000017550136800] Heap_lock - owner thread: 0x0000017550139720
+[0x000001af13185080] Heap_lock - owner thread: 0x000001af13189340
 
 Heap address: 0x0000000081a00000, size: 2022 MB, Compressed Oops mode: 32-bit
 
@@ -94,7 +94,7 @@ Heap:
  garbage-first heap   total 0K, used 0K [0x0000000081a00000, 0x0000000100000000)
   region size 1024K, 0 young (0K), 0 survivors (0K)
 
-[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffad1c824ed]
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd7ac224ed]
 
 GC Heap History (0 events):
 No events
@@ -112,50 +112,50 @@ Internal exceptions (0 events):
 No events
 
 Events (1 events):
-Event: 0.123 Loaded shared library C:\Program Files\Java\jdk-16.0.1\bin\java.dll
+Event: 0.011 Loaded shared library C:\Program Files\Java\jdk-16.0.1\bin\java.dll
 
 
 Dynamic libraries:
-0x00007ff6f0940000 - 0x00007ff6f0950000 	C:\Program Files\Java\jdk-16.0.1\bin\java.exe
-0x00007ffb187f0000 - 0x00007ffb189e6000 	C:\WINDOWS\SYSTEM32\ntdll.dll
-0x00007ffb16cc0000 - 0x00007ffb16d7d000 	C:\WINDOWS\System32\KERNEL32.DLL
-0x00007ffb16580000 - 0x00007ffb16848000 	C:\WINDOWS\System32\KERNELBASE.dll
-0x00007ffb160f0000 - 0x00007ffb161f0000 	C:\WINDOWS\System32\ucrtbase.dll
-0x00007ffb098e0000 - 0x00007ffb098f9000 	C:\Program Files\Java\jdk-16.0.1\bin\VCRUNTIME140.dll
-0x00007ffb09490000 - 0x00007ffb094a8000 	C:\Program Files\Java\jdk-16.0.1\bin\jli.dll
-0x00007ffb17920000 - 0x00007ffb179cc000 	C:\WINDOWS\System32\ADVAPI32.dll
-0x00007ffb17ce0000 - 0x00007ffb17d7e000 	C:\WINDOWS\System32\msvcrt.dll
-0x00007ffb17110000 - 0x00007ffb171ab000 	C:\WINDOWS\System32\sechost.dll
-0x00007ffb168b0000 - 0x00007ffb169d4000 	C:\WINDOWS\System32\RPCRT4.dll
-0x00007ffb16b20000 - 0x00007ffb16cc0000 	C:\WINDOWS\System32\USER32.dll
-0x00007ffb160c0000 - 0x00007ffb160e2000 	C:\WINDOWS\System32\win32u.dll
-0x00007ffb18340000 - 0x00007ffb1836a000 	C:\WINDOWS\System32\GDI32.dll
-0x00007ffb15fb0000 - 0x00007ffb160b9000 	C:\WINDOWS\System32\gdi32full.dll
-0x00007ffb16320000 - 0x00007ffb163bd000 	C:\WINDOWS\System32\msvcp_win.dll
-0x00007ffb08460000 - 0x00007ffb086fb000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\COMCTL32.dll
-0x00007ffb10fd0000 - 0x00007ffb10fda000 	C:\WINDOWS\SYSTEM32\VERSION.dll
-0x00007ffb17d80000 - 0x00007ffb17db0000 	C:\WINDOWS\System32\IMM32.DLL
-0x00007ffb10ff0000 - 0x00007ffb10ffc000 	C:\Program Files\Java\jdk-16.0.1\bin\vcruntime140_1.dll
-0x00007ffafd850000 - 0x00007ffafd8e1000 	C:\Program Files\Java\jdk-16.0.1\bin\msvcp140.dll
-0x00007ffad15c0000 - 0x00007ffad216b000 	C:\Program Files\Java\jdk-16.0.1\bin\server\jvm.dll
-0x00007ffb16e30000 - 0x00007ffb16e38000 	C:\WINDOWS\System32\PSAPI.DLL
-0x00007ffb02460000 - 0x00007ffb02469000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
-0x00007ffb179e0000 - 0x00007ffb17a4b000 	C:\WINDOWS\System32\WS2_32.dll
-0x00007ffb13820000 - 0x00007ffb13847000 	C:\WINDOWS\SYSTEM32\WINMM.dll
-0x00007ffb13ea0000 - 0x00007ffb13eb2000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
-0x00007ffb097d0000 - 0x00007ffb097da000 	C:\Program Files\Java\jdk-16.0.1\bin\jimage.dll
-0x00007ffb0d5d0000 - 0x00007ffb0d7b4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
-0x00007ffb0d2c0000 - 0x00007ffb0d2ec000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
-0x00007ffb15f30000 - 0x00007ffb15faf000 	C:\WINDOWS\System32\bcryptPrimitives.dll
-0x00007ffb08860000 - 0x00007ffb0886e000 	C:\Program Files\Java\jdk-16.0.1\bin\instrument.dll
-0x00007ffb091a0000 - 0x00007ffb091c5000 	C:\Program Files\Java\jdk-16.0.1\bin\java.dll
+0x00007ff6778c0000 - 0x00007ff6778d0000 	C:\Program Files\Java\jdk-16.0.1\bin\java.exe
+0x00007ffdd33d0000 - 0x00007ffdd35c6000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffdd2bd0000 - 0x00007ffdd2c8d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffdd0e50000 - 0x00007ffdd1118000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffdd0b40000 - 0x00007ffdd0c40000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffdc5e50000 - 0x00007ffdc5e68000 	C:\Program Files\Java\jdk-16.0.1\bin\jli.dll
+0x00007ffdd2990000 - 0x00007ffdd2a3c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffdd2fc0000 - 0x00007ffdd305e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffdd1a70000 - 0x00007ffdd1b0b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffdd15d0000 - 0x00007ffdd16f4000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffdd1430000 - 0x00007ffdd15d0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffdd0b10000 - 0x00007ffdd0b32000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffdd2340000 - 0x00007ffdd236a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffdd1320000 - 0x00007ffdd1429000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffdd1280000 - 0x00007ffdd131d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffdb0c50000 - 0x00007ffdb0eeb000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21\COMCTL32.dll
+0x00007ffdca260000 - 0x00007ffdca26a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffdcc0e0000 - 0x00007ffdcc0f9000 	C:\Program Files\Java\jdk-16.0.1\bin\VCRUNTIME140.dll
+0x00007ffdd30c0000 - 0x00007ffdd30f0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffdca720000 - 0x00007ffdca72c000 	C:\Program Files\Java\jdk-16.0.1\bin\vcruntime140_1.dll
+0x00007ffdb46d0000 - 0x00007ffdb4761000 	C:\Program Files\Java\jdk-16.0.1\bin\msvcp140.dll
+0x00007ffd7a560000 - 0x00007ffd7b10b000 	C:\Program Files\Java\jdk-16.0.1\bin\server\jvm.dll
+0x00007ffdd2dd0000 - 0x00007ffdd2dd8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffdbd010000 - 0x00007ffdbd019000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffdd2d60000 - 0x00007ffdd2dcb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffdc0f40000 - 0x00007ffdc0f67000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffdcea80000 - 0x00007ffdcea92000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffdc5e40000 - 0x00007ffdc5e4a000 	C:\Program Files\Java\jdk-16.0.1\bin\jimage.dll
+0x00007ffdc81e0000 - 0x00007ffdc83c4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffdc7f80000 - 0x00007ffdc7fac000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffdd0ca0000 - 0x00007ffdd0d1f000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffdc4e20000 - 0x00007ffdc4e2e000 	C:\Program Files\Java\jdk-16.0.1\bin\instrument.dll
+0x00007ffdc2280000 - 0x00007ffdc22a5000 	C:\Program Files\Java\jdk-16.0.1\bin\java.dll
 
 dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
 symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-16.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.488_none_ca04af081b815d21;C:\Program Files\Java\jdk-16.0.1\bin\server
 
 VM Arguments:
-jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\lib\idea_rt.jar=57101:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\bin -Dfile.encoding=UTF-8 
-java_command: com.company.Main
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\lib\idea_rt.jar=58622:C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.1\bin -Dfile.encoding=UTF-8 
+java_command: ModuleTest1
 java_class_path (initial): C:\Users\PC\Documents\Java\Progmatic\PreviousCodesInMethodsandSomeNew\out\production\PreviousCodesInMethodsandSomeNew
 Launcher Type: SUN_STANDARD
 
@@ -198,12 +198,12 @@ PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 
 OS:
  Windows 10 , 64 bit Build 19041 (10.0.19041.546)
-OS uptime: 17 days 7:30 hours
+OS uptime: 0 days 19:27 hours
 
 CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3 microcode 0x27, cx8, cmov, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, fma, vzeroupper, clflush
 
-Memory: 4k page, system-wide physical 8082M (1459M free)
-TotalPageFile size 11717M (AvailPageFile size 84M)
+Memory: 4k page, system-wide physical 8082M (606M free)
+TotalPageFile size 12425M (AvailPageFile size 98M)
 current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
 current process commit charge ("private bytes"): 51M, peak: 179M
 
